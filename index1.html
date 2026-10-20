@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#17191b">
+<title>Andrew Jones | Small Talk FAQ</title>
+<style>
+:root{color-scheme:light;--ink:#242424;--muted:#696969;--line:#e7e5e1;--paper:#f8f7f4;--card:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;line-height:1.5}.wrap{max-width:640px;margin:auto;padding:24px 16px 60px}.hero{background:#191a1b;border-radius:19px;padding:30px 26px 34px;color:#fff;margin-bottom:16px}.eyebrow{font-size:10px;letter-spacing:2.1px;font-weight:700;color:#adafb1;text-transform:uppercase}.hero h1{font-size:clamp(30px,7vw,44px);letter-spacing:-1.6px;line-height:1.1;margin:19px 0 12px;font-weight:720}.hero p{margin:0;color:#c5c5c5;font-size:15px;max-width:440px}.badge{display:inline-flex;border:1px solid #454545;border-radius:20px;padding:5px 10px;margin-top:25px;font-size:11px;color:#d3d3d3}.section{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:1.4px;font-weight:700;padding:16px 5px 11px}.faq{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}.item+.item{border-top:1px solid var(--line)}button.question{appearance:none;border:0;background:none;width:100%;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;text-align:left;cursor:pointer;font:600 15px/1.4 inherit;color:var(--ink);gap:10px}button.question:hover{background:#fafaf9}.symbol{font-size:21px;color:#888;font-weight:300;line-height:1}.answer{padding:0 20px 19px;font-size:14px;color:#5e5e5e;max-width:570px}button[aria-expanded="false"]+.answer{display:none}.footer{text-align:center;padding:22px 14px;color:#777;font-size:13px}.footer strong{display:block;color:#333;margin-bottom:6px}.tiny{margin-top:18px;font-size:11px;color:#999}button:focus-visible{outline:2px solid #444;outline-offset:-2px}
+</style>
+</head>
+<body><main class="wrap"><header class="hero"><div class="eyebrow">Social interaction portal · Andrew Jones</div><h1>Andrew Jones.<br>Before We Make Small Talk.</h1><p>A convenient reference for everything you're about to ask me. Now with biographical information.</p><div class="badge">Updated whenever something interesting happens</div></header><div class="section"><span>Frequently asked questions</span><span id="count"></span></div><div class="faq" id="faqs"></div><div class="footer"><strong>Still have a question?</strong>Please confirm it hasn't been answered above.<div class="tiny">Thank you for your cooperation in streamlining this interaction.</div></div></main>
+<script>
+// Customize any question or answer below before publishing.
+const items = [
+["How are you?","Good, thanks. You?"],
+["How's your day going?","Pretty well. Nothing to report at this time."],
+["What do you do for work?","I work in banking. Mostly meetings about other meetings."],
+["Do you like what you do?","Yes. There are certainly worse ways to spend a Tuesday."],
+["Have you been busy?","Yes. I have, however, found time to be here."],
+["How was your week?","Productive enough to justify the weekend."],
+["Any plans for the weekend?","A few. I'm trying not to overpromise."],
+["Did you have a good summer?","Yes. I would have preferred a slightly longer one."],
+["How was your vacation?","Very nice. I came back, which was the main drawback."],
+["Do you have any trips coming up?","A couple in the works. I'll know more once I book them."],
+["What's your name?","Andrew Jones. As advertised above."],
+["How old are you?","32. This information is current as of October 2026."],
+["Where are you from?","Baltimore, Maryland."],
+["How long have you lived in the city?","10 years. Long enough to have a few preferred routes."],
+["Where did you go to college?","Towson University."],
+["When did you graduate?","2016. The diploma has held up well."],
+["Where did you go to high school?","Calvert Hall."],
+["Do you live around here?","Yes. Baltimore has been home for the past 10 years."],
+["How do you know the host?","Through a series of events that eventually led to this invitation."],
+["Have you been here before?","Possibly. It depends how we're defining 'here.'"],
+["Do you like it here?","Yes. No formal complaints so far."],
+["What do you think of the weather?","It's definitely been doing a lot lately."],
+["Can you believe how fast this year is going?","I can. It's been moving at roughly the usual pace."],
+["Are you a morning person or a night person?","I'm generally more enthusiastic once I've had coffee."],
+["Are you watching anything good?","Yes. I just can't seem to remember what when someone asks."],
+["Have you tried the food?","Some of it. The findings are encouraging."],
+["Do you follow sports?","Yes. Enough to have opinions I probably shouldn't."],
+["How's the family?","Good, thanks. Everyone is proceeding as expected."],
+["What's new with you?","Nothing that warrants a formal announcement."],
+["So, what's next for you?","Probably another conversation. Ideally a more interesting one."],
+["Now that we've covered the basics, what would you actually like to talk about?","Anything interesting. I'm all ears."]
+];
+const root=document.querySelector('#faqs');document.querySelector('#count').textContent=items.length+' ANSWERS';
+items.forEach(([q,a],i)=>{let item=document.createElement('div');item.className='item';let b=document.createElement('button');b.className='question';b.setAttribute('aria-expanded',i===0?'true':'false');let text=document.createElement('span');text.textContent=q;let sym=document.createElement('span');sym.className='symbol';sym.textContent=i===0?'−':'+';b.append(text,sym);let ans=document.createElement('div');ans.className='answer';ans.textContent=a;b.addEventListener('click',()=>{let open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));sym.textContent=open?'+':'−'});item.append(b,ans);root.append(item)});
+</script></body></html>
